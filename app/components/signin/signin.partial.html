@@ -1,0 +1,26 @@
+<div layout-fill layout="column">
+    <md-content id="card" layout-padding layout-fill layout="column" layout-align="center center">
+        <md-card md-whiteframe="5">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Ryan's Shopping List App</span>
+                </md-card-title-text>
+            </md-card-title>
+
+            <md-card-content layout="column">
+                <md-input-container>
+                    <label>Username</label>
+                    <input type="text" ng-model="userName">
+                </md-input-container>
+                <md-input-container>
+                    <Label>Password</Label>
+                    <input type="password" ng-model="password">
+                </md-input-container>
+            </md-card-content>
+            <md-card-actions layout="column" layout-align="center center">
+                <md-button class="md-raised md-primary login-button" layout-fill ng-click="logIn()">Sign In</md-button>
+                <md-button class="md-raised login-button" ui-sref="signup" layout-fill>Create an Account</md-button>
+            </md-card-actions>
+        </md-card>
+    </md-content>
+</div>

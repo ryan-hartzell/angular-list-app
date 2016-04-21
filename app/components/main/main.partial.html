@@ -1,0 +1,47 @@
+<section layout="row" flex layout-fill>
+    <md-button class="md-accent md-fab md-fab-bottom-right" title="Add a new list" aria-label="New List"
+               ng-click="createNewList($event)">
+        <md-icon md-svg-src="icons/add2.svg"></md-icon>
+    </md-button>
+
+    <md-sidenav class="md-sidenav-left" md-is-locked-open="$mdMedia('gt-md')" md-whiteframe="4"
+                md-component-id="navigation">
+        <md-toolbar class="md-default md-tall md-toolbar-tools-bottom">
+            <span flex></span>
+            <h1 class="md-toolbar-tools md-toolbar-tools-bottom">
+                <span class="md-flex">{{ user.firstName }} {{ user.lastName }}</span>
+            </h1>
+        </md-toolbar>
+        <md-list style="padding-top: 0">
+            <md-subheader class="md-no-sticky">My Lists</md-subheader>
+            <md-list-item ng-repeat="list in lists" ng-click="selectList(list)">
+                <p>{{ list }}</p>
+            </md-list-item>
+            <md-subheader class="md-no-sticky">{{ user.email }}</md-subheader>
+            <md-list-item ng-click="null">
+                <md-icon md-svg-icon="icons/settings.svg" title="Go to my settings"></md-icon>
+                <p>Settings</p>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+    <section layout="column" layout-fill>
+        <md-content>
+            <md-toolbar class="md-default">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Menu" hide-gt-md ng-click="toggleNav()">
+                        <md-icon md-svg-icon="icons/menu.svg"></md-icon>
+                    </md-button>
+                    <span flex></span>
+                    <md-button aria-label="Sign Out" ng-click="signOut()">
+                        Sign Out
+                    </md-button>
+                </div>
+            </md-toolbar>
+        </md-content>
+
+        <shop-list class="md-flex"></shop-list>
+
+    </section>
+</section>
+

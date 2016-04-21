@@ -1,0 +1,64 @@
+<md-content layout="row" layout-fill layout-align="center center">
+    <form name="newUser">
+        <md-card md-whiteframe="5">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Create an Account</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <div layout="row">
+                    <md-input-container>
+                        <label>First Name</label>
+                        <input type="text" required ng-model="firstName" name="first">
+                        <div ng-messages="newUser.first.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Last Name</label>
+                        <input type="text" ng-model="lastName">
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container>
+                        <label>Email</label>
+                        <input type="email" required ng-model="email" name="newEmail">
+                        <div ng-messages="newUser.newEmail.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container>
+                        <label>Username</label>
+                        <input type="text" required ng-model="userName" name="newUsername">
+                        <div ng-messages="newUser.newUsername.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container>
+                        <Label>Password</Label>
+                        <input type="password" ng-model="password" required name="newPassword">
+                        <div ng-messages="newUser.newPassword.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <Label>Confirm Password</Label>
+                        <input type="password" ng-model="passwordConfirm" required name="confirm">
+                        <div ng-messages="newUser.confirm.$error">
+                            <div ng-message="required">This is required!</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-raised" ui-sref="signin" style="margin-right: 15px">Return to Sign In</md-button>
+                <md-button class="md-raised md-primary" ng-click="addNewUser()">Sign Up</md-button>
+            </md-card-actions>
+        </md-card>
+    </form>
+</md-content>

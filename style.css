@@ -1,0 +1,8 @@
+.doneCrossOut {
+    text-decoration: line-through;
+    color: #a0a0a0;
+}
+
+.login-button {
+    margin: 5px !important
+}
